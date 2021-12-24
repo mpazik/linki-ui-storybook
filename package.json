@@ -1,6 +1,6 @@
 {
   "name": "linki-ui-storybook",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "storybook for linki-ui",
   "keywords": [
     "linki",
@@ -29,9 +29,6 @@
     "*.js",
     "*.d.ts"
   ],
-  "scripts": {
-    "prepare": "node ./build/prepare.js"
-  },
   "dependencies": {
     "@storybook/addons": "6.5.0-alpha.5",
     "@storybook/client-api": "6.5.0-alpha.5",
@@ -42,9 +39,9 @@
     "@storybook/store": "6.5.0-alpha.5",
     "core-js": "^3.8.2",
     "global": "^4.4.0",
+    "linki-ui": "^0.0.5",
     "read-pkg-up": "^7.0.1",
-    "regenerator-runtime": "^0.13.7",
-    "linki-ui": "^0.0.5"
+    "regenerator-runtime": "^0.13.7"
   },
   "peerDependencies": {
     "@babel/core": "*"

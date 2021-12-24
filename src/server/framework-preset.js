@@ -1,0 +1,1 @@
+exports.webpack = (config) => config

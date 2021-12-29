@@ -1,14 +1,17 @@
-import global from "global";
-import { renderJsonHtmlToDom } from "linki-ui";
+import { createComponentRenderer } from "linki-ui";
 
-var rootElement = global.document.getElementById('root');
+export const renderToDOM = ({storyFn, selectedKind, selectedStory, showMain, showError, storyContext}, domElement) => {
+    const element = storyFn()
+    const [parent, render] = createComponentRenderer(domElement)
+    domElement.innerHTML = ""
+    domElement.appendChild(parent)
 
-export const renderToDOM = ({storyFn, selectedKind, selectedStory, showMain, showError}) => {
-    const element = storyFn();
     showMain();
     if (typeof element === 'string' || typeof element === 'undefined' || Array.isArray(element)) {
-        rootElement.innerHTML = ""
-        rootElement.appendChild(renderJsonHtmlToDom(element))
+        render(element)
+        storyContext.abortSignal.addEventListener("abort", () => {
+            parent.dispatchEvent(new CustomEvent("disconnected"));
+        })
     }
     else {
         showError({

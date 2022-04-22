@@ -1,2 +1,17 @@
-node_modules
-app/framework/dist
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/node_modules
+
+# IDEs
+.idea
+.vscode
+
+# Build output
+/dist
+
+# misc
+.DS_Store

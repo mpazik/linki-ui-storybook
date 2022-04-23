@@ -1,7 +1,8 @@
 import { start } from '@storybook/core/client';
 
-import './globals'
 import { renderToDOM } from './render';
+
+window.STORYBOOK_ENV = 'LINKI_UI';
 
 const framework = 'linki-ui';
 const api = start(renderToDOM);

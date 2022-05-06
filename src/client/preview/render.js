@@ -2,7 +2,7 @@ import { createComponentRenderer } from "linki-ui";
 
 export const renderToDOM = ({storyFn, selectedKind, selectedStory, showMain, showError, storyContext}, domElement) => {
     const element = storyFn()
-    const [parent, render] = createComponentRenderer(domElement)
+    const render = createComponentRenderer(domElement)
     domElement.innerHTML = ""
     domElement.appendChild(parent)
 

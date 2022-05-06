@@ -4,7 +4,6 @@ export const renderToDOM = ({storyFn, selectedKind, selectedStory, showMain, sho
     const element = storyFn()
     const render = createComponentRenderer(domElement)
     domElement.innerHTML = ""
-    domElement.appendChild(parent)
 
     showMain();
     if (typeof element === 'string' || typeof element === 'undefined' || Array.isArray(element)) {
